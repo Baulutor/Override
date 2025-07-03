@@ -1,15 +1,16 @@
 # level02
 
-We saw a `system("/bin/sh");` at the end of the function.
-So we need to go there but we need to put the same password as the one they compared to.
+We saw a `system("/bin/sh");` at the end of the function.  
+So we need to go there, but we also need to enter the same password that is being compared.
 
-2 importants informations:
-    - there is a printf() without format
-    - the password is in a local variable 
+Two important pieces of information:
 
-## Dump the stack
+- There is a `printf()` without a format specification.
+- The password is stored in a local variable.
 
-Since the password is in a local variable, it is located on the stack.
-And as we already see we can use the `%p` in the printf, to dump the stack.
+## Dump the Stack
 
-We dump the stack sufficiently to show the password. than do it in little endian and finally put it in the binary to launch /bin/sh
+Since the password is in a local variable, it is located on the stack.  
+And as we've already seen, we can use `%p` in the `printf` to dump the stack.
+
+We dump the stack sufficiently to reveal the password, then convert it to Little Endian, and finally input it into the binary to launch `/bin/sh`.

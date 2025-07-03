@@ -1,13 +1,17 @@
 # level01
 
-there is 2 inputs needed in this level.
-One is for the username and one is for the password 
+There are 2 inputs needed at this level:  
+one is for the username, and one is for the password.
 
-The username `dat_will` is cleary write in the `int verify_user_name(void)`
+The username `dat_will` is clearly written in the `int verify_user_name(void)` function.
 
-## Return address attack
+## Return Address Attack
 
-For the password we can overwrite the local_54 in `fgets(local_54,100,stdin)`
+For the password, we can overwrite `local_54` in:
 
-because the buffer of local_54 is 64 and the limit  of the fgets is 100.
-So I can overwrite the return address with the address of the fgets where I put my shellcode to execute the shell.
+```c
+fgets(local_54, 100, stdin)
+```
+
+because the buffer local_54 is 64 bytes, and the limit for fgets is 100.
+So we can overwrite the return address with the address of the buffer where we placed our shellcode, in order to execute a shell.

@@ -1,7 +1,7 @@
 # level00
 
-We start slowly, we just have to not enter this condition:  `if (local_14[0] != 0x149c)`
-to go to the else condition, where is executed /bin/sh.
-So we have to put the value `0x149c` in decimal which is : `5276`
+We start slowly — we just have to avoid entering this condition: `if (local_14[0] != 0x149c)`, so that we reach the next condition, where `/bin/sh` is executed.
 
-and than cat /home/users/level01/.pass
+So we need to input the value `0x149c` in decimal, which is `5276`, and then run:
+
+    cat /home/users/level01/.pass
